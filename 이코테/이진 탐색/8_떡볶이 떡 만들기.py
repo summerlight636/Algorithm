@@ -13,11 +13,11 @@ def left(height):
 
 start = 0
 end = max(data)
-while start >= end:
+while start <= end:
     mid = (start + end) // 2
-    if left(mid) == m:
-        print(mid)
-    elif left(mid) < m:
-        start = mid + 1
-    else:
+    if left(mid) < m:
         end = mid - 1
+    else:
+        result = mid
+        start = mid + 1
+print(result)
