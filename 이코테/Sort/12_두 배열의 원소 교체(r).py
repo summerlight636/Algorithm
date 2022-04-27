@@ -11,6 +11,8 @@ b = sorted(b, reverse=True)
 for i in range(k):
     if a[i] < b[i]:
         a[i], b[i] = b[i], a[i]
+    else:
+        break
 
 for i in range(n):
     sum += a[i]
