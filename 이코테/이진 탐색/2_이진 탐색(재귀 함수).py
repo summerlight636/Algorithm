@@ -4,13 +4,13 @@ def binary_search(array, target, start, end):
         return None
     # 성공
     mid = (start + end) // 2
-    if target == array[mid]:
+    if array[mid] == target:
         return mid
     # 재귀
     elif target < array[mid]:
-        binary_search(array, target, start, mid-1)
+        return binary_search(array, target, start, mid-1)
     else:
-        binary_search(array, target, mid+1, end)
+        return binary_search(array, target, mid+1, end)
 
 n, target = list(map(int, input().split()))
 array = list(map(int, input().split()))
