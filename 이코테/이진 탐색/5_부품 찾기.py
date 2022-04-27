@@ -15,7 +15,7 @@ def binary_search(array, target, start, end):
     return None
 
 for i in range(m):
-    if binary_search(a, b[i], 0, m-1) == None:
+    if binary_search(a, b[i], 0, n-1) == None:
         print("no")
     else:
         print("yes")
