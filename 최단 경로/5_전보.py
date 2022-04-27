@@ -20,7 +20,7 @@ def dijkstra(start):
     while q:
         dist, now = heapq.heappop(q)
 
-        if distance(now) < dist:
+        if distance[now] < dist:
             continue
 
         for i in graph[now]:
@@ -38,7 +38,7 @@ max_distance = 0
 for d in distance:
     if d != INF:
         count += 1
-        max_distance = max(distance, d)
+        max_distance = max(max_distance, d)
 
 print(count-1, end = ' ')
 print(max_distance)
