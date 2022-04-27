@@ -1,0 +1,21 @@
+n = int(input())
+a = list(map(int, input().split()))
+m = int(input())
+b = list(map(int, input().split()))
+
+def binary_search(array, target, start, end):
+    while start <= end:
+        mid = (start + end) // 2
+        if array[mid] == target:
+            return mid
+        elif array[mid] > target:
+            end = mid - 1
+        else:
+            start = mid + 1
+    return None
+
+for i in range(m):
+    if binary_search(a, b[i], 0, m-1) == None:
+        print("no")
+    else:
+        print("yes")
