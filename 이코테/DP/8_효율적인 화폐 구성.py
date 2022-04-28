@@ -14,7 +14,7 @@ for i in range(n):
         if d[j-a[i]] != 10001:
             d[j] = min(d[j], d[j-a[i]] + 1)
 
-
+#
 # 출력
 if d[m] == 10001:
     print(-1)
