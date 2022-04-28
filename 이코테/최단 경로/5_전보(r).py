@@ -39,4 +39,4 @@ for i in range(1, n+1):
         if max < distance[i]:
             max = distance[i]
 
-print(count, max)
+print(count-1, max)
