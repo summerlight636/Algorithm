@@ -21,8 +21,8 @@ for k in range(1, n+1):
             graph[a][b] = min(graph[a][b], graph[a][k]+graph[k][a])
 
 # 출력
-for i in range (n):
-    for j in range (n):
+for i in range (1, n+1):
+    for j in range (1, n+1):
         print(graph[i][j], end=' ')
     print()
 
