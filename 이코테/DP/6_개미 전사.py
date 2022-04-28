@@ -1,15 +1,15 @@
 # 입력
 n = int(input())
 k = list(map(int, input().split()))
-a = [0]*(n+1)
 
 # 특수조건
-a[1] = k[0]
-a[2] = max(k[0], k[1])
+d = [0] * 100
+d[0] = k[0]
+d[1] = max(k[0], k[1])
 
 # 실행
-for i in range(3, n+1):
-    a[i] = max(a[i-2]+k[i-1], a[i-1])
+for i in range(2, n):
+    d[i] = max(d[i-1], d[i-2] + k[i])
 
 # 출력
-print(a[n])
+print(d[n-1])
