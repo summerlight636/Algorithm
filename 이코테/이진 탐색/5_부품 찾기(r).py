@@ -26,4 +26,4 @@ for n in b:
     if binary_search(a, n, 0, n-1) != None:
         print("yes", end = ' ')
     else:
-        print("no")
+        print("no", end = ' ')
