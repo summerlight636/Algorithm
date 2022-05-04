@@ -16,14 +16,12 @@ def binary_search(array, target, start, end):
             if i > mid:
                 sum += array[i]-array[mid]
 
-        if sum == target:
-            result = array[mid]
-        elif sum < target:
+        if sum < target:
             end = mid - 1
         else:
             result = array[mid]
             start = mid + 1
-        print(result)
+
     return result
 
 #출력
