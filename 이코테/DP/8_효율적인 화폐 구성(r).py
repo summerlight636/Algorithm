@@ -17,6 +17,10 @@ for i in range(m+1):
         if i % v == 0:
             d[i] = min(d[i], i//v)
 
-        d[i] = min(d[i], d[i-v] + 1)
+        if i - v >= 0:
+            d[i] = min(d[i], d[i-v] + 1)
 
-print(d[m])
+if d[m] == 10001:
+    print(-1)
+else:
+    print(d[m])
