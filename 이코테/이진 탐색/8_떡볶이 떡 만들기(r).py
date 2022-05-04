@@ -8,22 +8,23 @@ array = list(map(int, input().split()))
 #실행
 def binary_search(array, target, start, end):
     array.sort()
-    mid = (start + end) // 2
-
     while start <= end:
+        mid = (start + end) // 2
 
         sum = 0
         for i in range(n):
             if i > mid:
-                sum += array[i]
+                sum += array[i]-array[mid]
 
         if sum == target:
-            return mid
+            result = array[mid]
         elif sum < target:
-            end = mid -1
+            end = mid - 1
         else:
+            result = array[mid]
             start = mid + 1
-    return mid
+        print(result)
+    return result
 
 #출력
 result = binary_search(array, m, 0, n-1)
