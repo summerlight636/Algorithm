@@ -22,8 +22,6 @@ def solutions(n, k, x, graph):
                 dist[v] = dist[now] + 1
                 queue.append(v)
 
-    print(dist)
-
     check = False
     for i in range(1, n+1):
         if dist[i] == k:
