@@ -11,24 +11,27 @@ for _ in range(m):
 
 
 def solutions(n, k, x, graph):
-    INF = 1e9
+    INF = int(1e9)
     dist = [INF] * (n + 1)
+    dist[x] = 0
     queue = deque([x])
     while queue:
-        now = deque.popleft(queue)
+        now = queue.popleft()
         for v in graph[now]:
             if dist[v] == INF:
                 dist[v] = dist[now] + 1
-                deque.append(v)
-            else:
-                continue
+                queue.append(v)
 
-    count = 0
-    for v in dist:
-        if v == k:
-            count += 1
+    print(dist)
 
-    result = count
-    print(result)
+    check = False
+    for i in range(1, n+1):
+        if dist[i] == k:
+            print(i)
+            check = True
+
+    if check == False:
+        print(-1)
+
 
 solutions(n, k, x, graph)
