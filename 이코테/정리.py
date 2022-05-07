@@ -7,6 +7,16 @@
 #리스트를 문자열로 변환
 #print(''.join(리스트))
 
+#특정 값 변환: replace()
+num_dic = {"zero":"0", "one":"1", "two":"2", "three":"3", "four":"4", "five":"5", "six":"6", "seven":"7", "eight":"8", "nine":"9"}
+
+def solution(s):
+    answer = s
+    for key, value in num_dic.items():
+        answer = answer.replace(key, value)
+    return int(answer)
+
+
 # 2차원 리스트 90도 회전
 def rotate_a_matrix_by_90_degree(a):
     n = len(a)
@@ -16,6 +26,11 @@ def rotate_a_matrix_by_90_degree(a):
         for j in range(m):
             result[j][n-i-1] = a[i][j]
     return result
+
+#힙 자료구조
+출발 노드로부터 가장 거리가 짧은 노드를 빠르게 찾을 수 있음
+우선순위 큐: 우서눗ㄴ위 높은 데이터를 가장 먼저 삭제
+
 
 내장 :
     1) eval()
