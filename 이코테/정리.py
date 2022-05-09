@@ -16,6 +16,8 @@ def solution(s):
         answer = answer.replace(key, value)
     return int(answer)
 
+#람다식
+
 
 # 2차원 리스트 90도 회전
 def rotate_a_matrix_by_90_degree(a):
@@ -37,10 +39,10 @@ def rotate_a_matrix_by_90_degree(a):
     2) sorted(대상, reverse, key)
 itertools : 순열과 조합
     data = ['a', 'b', 'c']
-    1) result = list(permutations(data, 3)) => [(a,b,c), .... 총 6개]
-    2) result = list(combinations(data, 2)) => [(a, b), (a, c), (b, c)]
-    3) product =  list(product(data,2)) => [(a,a) (a,b )(a,c).... 총 9개]
-    4) combinations_with_replacement = list(...(data, 2)) => [(a,a), (a,b), (a,c), (b,b), (b,c), (c,c)] => 중복조합
+    1) result = list(permutations(data, 3)) => [(a,b,c),(a,c,b),(b,a,c),(b,c,a),(c,a,b),(c,b,a) .... 총 3!=6개]
+    2) result = list(combinations(data, 2)) => [(a, b), (a, c), (b, c)] 총 3!/2! = 3개
+    3) product =  list(product(data,2)) => [(a,a) (a,b )(a,c).... 총 3*3=9개]
+    4) combinations_with_replacement = list(combinations_with_replacement(data, 2)) => [(a,a), (a,b), (a,c), (b,b), (b,c), (c,c)] => 중복조합
 heapq : 우선순위 큐
 bisect : 이진탐색
     1) bisect_left(a,x) : 리스트 a에 데이터 x를 삽입할 가장 왼쪽 인덱스
