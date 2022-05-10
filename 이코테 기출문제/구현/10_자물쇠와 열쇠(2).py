@@ -9,42 +9,41 @@ def rotate_a_matrix_by_90_degree(a):
             result[j][n-i-1] = a[i][j]
     return result
 
-def check(lock_map):
-    n = len(lock_map) // 3
+def check(graph):
+    n = len(graph) // 3
     for i in range(n, 2*n):
         for j in range(n, 2*n):
-            if lock_map[i][j] != 1:
+            if graph[i][j] != 1:
                 return False
     return True
 
 def solution(key, lock):
     n = len(lock)
     m = len(key)
+
     #lock_map 준비
     lock_map = [[0] * (3 * n) for _ in range(3 * n)]
-    for i in range(n, 2*n):
-        for j in range(n, 2*n):
-            lock_map[i][j] = lock[i-n][j-n]
+    for i in range(n):
+        for j in range(n):
+            lock_map[i+n][j+n] = lock[i][j]
 
-    result = False
-    temp = lock_map
+
     #4번 회전
-    for i in range(4):
-        #시작점: (n~2n-1, n~2n-1)
-        for i in range(n, 2*n):
-            for j in range(n, 2*n):
-                for a in range(0, m):
-                    for b in range(0, m):
+    for rotation in range(4):
+
+        temp = lock_map
+        #시작점: (0~2n-1, 0~2n-1)
+        for i in range(2*n):
+            for j in range(2*n):
+                for a in range(m):
+                    for b in range(m):
                         temp[i+a][j+b] += key[a][b]
 
         if check(temp) == True:
             return True
 
-        else:
-        #만족하지 못할 경우, 회전
-            temp = lock_map
-            rotate_a_matrix_by_90_degree(key)
+        key = rotate_a_matrix_by_90_degree(key)
 
-    return result
+    return False
 
 print(solution(key, lock))
