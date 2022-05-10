@@ -39,8 +39,13 @@ def solution(key, lock):
                     for b in range(m):
                         temp[i+a][j+b] += key[a][b]
 
-        if check(temp) == True:
-            return True
+                if check(temp) == True:
+                    return True
+
+                for a in range(m):
+                    for b in range(m):
+                        temp[i+a][j+b] -= key[a][b]
+
 
         key = rotate_a_matrix_by_90_degree(key)
 
