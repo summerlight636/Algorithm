@@ -1,17 +1,15 @@
 n, m = map(int, input().split())
-k = list(map(int, input().split()))
-k.sort()
-x = set(k)
+a = list(map(int, input().split()))
+a.sort()
 
-d = [0]*11
+#무게/개수 테이블
+table = [0]*(m+1)
+for v in a:
+    table[v] += 1
 
-for v in k:
-    d[v] += 1
+result = 0
+for v in table:
+    result += v*(n-v)
+    n = n-v
 
-count = 0
-for i in k:
-    for j in range(i+1, 10):
-        if d[j] != 0:
-            count += d[j]
-
-print(count)
+print(result)
