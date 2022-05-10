@@ -11,12 +11,11 @@ def rotate_a_matrix_by_90_degree(a):
 
 def check(lock_map):
     n = len(lock_map) // 3
-    result = True
     for i in range(n, 2*n):
         for j in range(n, 2*n):
             if lock_map[i][j] != 1:
-                result = False
-    return result
+                return False
+    return True
 
 def solution(key, lock):
     n = len(lock)
