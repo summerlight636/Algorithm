@@ -10,10 +10,11 @@ def solution(food_times, k):
     for i in range(l):
         heapq.heappush(q, (food_times[i], i + 1))
 
-    while heapq.heappop(q)[0] * l <= k:
+    while q[0][0] * l <= k:
         k -= heapq.heappop(q)[0] * l
         l -= 1
 
-    return (k % l)
+    result = sorted(q, key = lambda x:x[1])
+    return result[(k % l)][1]
 
 print(solution(food_times, k))
