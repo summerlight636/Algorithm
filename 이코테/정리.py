@@ -7,6 +7,10 @@
 #리스트를 문자열로 변환
 #print(''.join(리스트))
 
+#리스트 안에서 특정 값 삭제, 삽입 가능
+리스트.append([x, y, a])
+리스트.remove([x, y, a])
+
 #특정 값 변환: replace()
 num_dic = {"zero":"0", "one":"1", "two":"2", "three":"3", "four":"4", "five":"5", "six":"6", "seven":"7", "eight":"8", "nine":"9"}
 
