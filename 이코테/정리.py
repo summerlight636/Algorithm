@@ -14,6 +14,20 @@
 #특정 값 변환: replace()
 num_dic = {"zero":"0", "one":"1", "two":"2", "three":"3", "four":"4", "five":"5", "six":"6", "seven":"7", "eight":"8", "nine":"9"}
 
+#시계 방향
+dx = [-1, 0, 1, 0]
+dy = [0, 1, 0, -1]
+
+#n*m의 tmep 그래프 안에서 바이러스
+def virus(x, y):
+    for i in range(4):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        if 0<= nx <n and 0<= ny < m:
+            if temp[nx][ny] == 0:
+                temp[nx][ny] = 2
+                virus(nx, ny)
+
 def solution(s):
     answer = s
     for key, value in num_dic.items():
