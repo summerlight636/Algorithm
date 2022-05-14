@@ -1,11 +1,6 @@
 def solution(N, stages):
     answer = []
 
-    challenging = [0] * (N + 2)
-
-    for v in stages:
-        challenging[v] += 1
-
     failure_rate = [0] * (N + 2)
 
     result = []
