@@ -7,6 +7,12 @@
 #리스트를 문자열로 변환
 #print(''.join(리스트))
 
+#중간값
+(n-1)//2
+
+#리스트 표현
+left_side = [x for x in tail if x <= pivot]
+
 #리스트 안에서 특정 값 삭제, 삽입 가능
 리스트.append([x, y, a])
 리스트.remove([x, y, a])
