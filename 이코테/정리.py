@@ -58,7 +58,11 @@ def rotate_a_matrix_by_90_degree(a):
 
 #힙 자료구조
 출발 노드로부터 가장 거리가 짧은 노드를 빠르게 찾을 수 있음
-우선순위 큐: 우서눗ㄴ위 높은 데이터를 가장 먼저 삭제
+우선순위 큐: 우서순위 높은 데이터를 가장 먼저 삭제
+import heapq
+heap = []
+heapq.heappush(heap, input)
+heapq.heappop(heap)
 
 
 내장 :
