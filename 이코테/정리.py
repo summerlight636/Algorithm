@@ -23,6 +23,11 @@ left_side = [x for x in tail if x <= pivot]
 #특정 값 변환: replace()
 num_dic = {"zero":"0", "one":"1", "two":"2", "three":"3", "four":"4", "five":"5", "six":"6", "seven":"7", "eight":"8", "nine":"9"}
 
+#count_by_range(a, left, right)
+정렬된 리스트에서 값이 left<=x<=right 에 속하는 원소 개수 반환
+직접 bisect_right 과 bisect_left 를 이용해 정의하여 ㅅ사용
+return right - left 로
+
 #시계 방향
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
