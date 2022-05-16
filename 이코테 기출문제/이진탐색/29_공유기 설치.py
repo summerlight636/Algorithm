@@ -6,7 +6,7 @@ array.sort()
 
 
 start = 1
-end = array[n-1]-array[0]
+end = array[-1]-array[0]
 
 result = (start + end) // 2
 while start <= end:
