@@ -20,6 +20,9 @@ left_side = [x for x in tail if x <= pivot]
 리스트.append([x, y, a])
 리스트.remove([x, y, a])
 
+#문자열 뒤집기
+word = word[::-1]
+
 #특정 값 변환: replace()
 num_dic = {"zero":"0", "one":"1", "two":"2", "three":"3", "four":"4", "five":"5", "six":"6", "seven":"7", "eight":"8", "nine":"9"}
 
