@@ -12,7 +12,7 @@ def BFS(x, y):
     queue.append((x, y))
 
     dx = [1, -1, 0, 0]
-    dy = [0, 0, -1, 1]4
+    dy = [0, 0, -1, 1]
 
     while queue:
         (x, y) = queue.popleft()
