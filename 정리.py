@@ -95,4 +95,32 @@ math : 팩토리얼, 제곱근, 최대공약수(GCD), 삼각함수, pi 등
     1) factorial(x)
     2) sqrt(x)
     3) gcd(a, b)
-    4) math.pi 또는 math.e 
+    4) math.pi 또는 math.e
+
+#해시
+import collections
+
+
+def solution(participant, completion):
+    # 1. participant의 Counter를 구한다
+    # 2. completion의 Counter를 구한다
+    # 3. 둘의 차를 구하면 정답만 남아있는 counter를 반환한다
+    answer = collections.Counter(participant) - collections.Counter(completion)
+
+    # 4. counter의 key값을 반환한다
+    return list(answer.keys())[0]
+
+
+print(solution(["marina", "josipa", "nikola", "vinko", "filipa"]
+               , ["josipa", "filipa", "marina", "nikola"]))
+출처: https: // coding - grandpa.tistory.com / 85[개발자로
+취직하기: 티스토리]
+
+collections.Counter(리스트)
+뺄셈 연산 가능
+
+문자열.startswith(문자열)
+
+zip()
+동일 개수로 이루어진 자료형을 튜플로 묶어주는 함수
+인덱스 짝이 없다면 없는 부분은 버려짐
