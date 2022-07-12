@@ -22,7 +22,7 @@ def solutions(n, weak, dist):
                 if count == len(dist):
                     count += 1
                     break
-                count +=1
+                count += 1
                 position = weak[index] + friends[count - 1]
 
             answer = min(answer, count)
