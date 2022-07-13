@@ -24,16 +24,14 @@ dy = [0, 1, 0, -1]
 
 def virus(x, y):
     jido[x][y] = 2
-    visited[x][y] = True
 
     for i in range(4):
         nx = x + dx[i]
         ny = y + dy[i]
 
-        if 0<=nx and nx<=n-1 and 0<=ny and ny<=m-1:
-            if not visited[nx][ny]:
-                if jido[nx][ny] != 1:
-                    virus(nx, ny)
+        if 0<=nx<=n-1 and 0<=ny<=m-1:
+            if jido[nx][ny] == 0:
+                virus(nx, ny)
 
 def count_0(jido):
     count = 0
@@ -46,9 +44,6 @@ def count_0(jido):
 def simulation():
     result = 0
     for walls in list(combinations(space, 3)):
-
-        global visited
-        visited = [[False] * m for _ in range(n)]
 
         for a, b in walls:
             jido[a][b] = 1
