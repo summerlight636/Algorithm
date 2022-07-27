@@ -1,5 +1,6 @@
 # 임포트
-
+import sys
+sys.setrecursionlimit(10**6)
 
 # 입력
 n, l, r = map(int, input().split())
