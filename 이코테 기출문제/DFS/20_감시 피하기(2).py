@@ -24,6 +24,7 @@ for i in range(n):
 for obstacles in list(combinations(space, 3)):
     # 모든 t에 대해 감시 확인
     result = True
+    #print(obstacles)
     for tx, ty in teacher:
         # 장애물 먼저 고려해 범위 지정
         x_start = 0
@@ -43,15 +44,19 @@ for obstacles in list(combinations(space, 3)):
                     x_start = max(x_start, ox+1)
 
         for i in range(x_start, x_end+1):
-            for j in range(y_start, y_end+1):
-                if graph[i][j] == 'S':
-                    result = False
+            if graph[i][ty] == 'S':
+                result = False
+        for j in range(y_start, y_end+1):
+            if graph[tx][j] == 'S':
+                result = False
 
+        #print(x_start, x_end, y_start, y_end)
         if not result:
             break
 
     if result:
         break
 
+
 # 출력
-print("YES" if result is True else "NO", end='')
+print("YES" if result is True else "NO")
