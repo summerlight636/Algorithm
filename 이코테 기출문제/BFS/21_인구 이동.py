@@ -18,7 +18,7 @@ t_nation = []
 
 def dfs(x, y):
     global visited, t_num, t_space, t_nation, change
-    print('dfs(', x, ',', y, ')----------')
+    # print('dfs(', x, ',', y, ')----------')
     if visited[x][y] == 0:
         visited[x][y] = 1
         t_num += graph[x][y]
@@ -26,7 +26,7 @@ def dfs(x, y):
         t_nation.append((x, y))
 
         for k in range(4):
-            print('k:', k)
+            # print('k:', k)
             nx = x + dx[k]
             ny = y + dy[k]
 
@@ -36,7 +36,7 @@ def dfs(x, y):
             if visited[nx][ny] == 0:
                 diff = abs(graph[nx][ny] - graph[x][y])
                 if l <= diff <= r:
-                    print(x, ',', y, '에서 ', nx, ',', ny, '방문')
+                    # print(x, ',', y, '에서 ', nx, ',', ny, '방문')
                     dfs(nx, ny)
 
         if t_num > 1:
@@ -46,9 +46,9 @@ def dfs(x, y):
         for x, y in t_nation:
             graph[x][y] = int(t_num / t_space)
 
-        print(x, y)
-        print(graph)
-        print(t_nation)
+        # print(x, y)
+        # print(graph)
+        # print(t_nation)
 
     else:
         return
