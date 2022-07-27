@@ -9,7 +9,6 @@ for i in range(n):
     A.append(list(map(int, input().split())))
 
 # 상수
-INF = int(1e9)
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
 
@@ -17,6 +16,7 @@ dy = [0, 1, 0, -1]
 def dfs(x, y):
     global visited, t_num, t_space, t_list
     visited[x][y] = True
+    locked[x][y] = True
     t_num += A[x][y]
     t_space += 1
     t_list.append((x, y))
@@ -26,12 +26,13 @@ def dfs(x, y):
         ny = y + dy[i]
 
         if 0 <= nx <= n-1 and 0 <= ny <= n-1:
-            if not visited[nx][ny] and l <= abs(A[x][y]-A[nx][ny]) <= r:
+            if not visited[nx][ny] and not locked[nx][ny] and l <= abs(A[x][y]-A[nx][ny]) <= r:
                 dfs(nx, ny)
 
 cond = True
 count = 0
 visited = [[False]*n for _ in range(n)]
+locked = [[False]*n for _ in range(n)]
 while cond:
     for i in range(n):
         for j in range(n):
@@ -48,7 +49,10 @@ while cond:
                 t_avg = t_num // t_space
                 for x, y in t_list:
                     A[x][y] = t_avg
+
                 if t_space != 1:
+                    for a, b in t_list:
+                        locked[a][b] = False
                     cond = True
 
     if cond:
