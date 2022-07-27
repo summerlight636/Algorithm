@@ -4,7 +4,7 @@ from itertools import combinations
 # 입력
 n = int(input())
 graph = []
-for i in range(n):
+for _ in range(n):
     graph.append(list(input().split()))
 
 student = []
@@ -19,17 +19,13 @@ for i in range(n):
         else:
             space.append((i, j))
 
-
-# 상수
-INF = int(1e9)
-
 # 알고리즘
-#모든 장애물 설치 케이스에 대하여
+# 모든 장애물 설치 케이스에 대하여
 for obstacles in list(combinations(space, 3)):
-    #모든 t에 대해 감시 확인
+    # 모든 t에 대해 감시 확인
     result = True
     for tx, ty in teacher:
-        #장애물 먼저 고려해 범위 지정
+        # 장애물 먼저 고려해 범위 지정
         x_start = 0
         x_end = n-1
         y_start = 0
@@ -37,9 +33,9 @@ for obstacles in list(combinations(space, 3)):
         for ox, oy in obstacles:
             if tx == ox:
                 if ty < oy:
-                    y_end = min(x_end, oy-1)
+                    y_end = min(y_end, oy-1)
                 else:
-                    y_start = max(x_start, oy+1)
+                    y_start = max(y_start, oy+1)
             if ty == oy:
                 if tx < ox:
                     x_end = min(x_end, ox-1)
@@ -51,16 +47,11 @@ for obstacles in list(combinations(space, 3)):
                 if graph[i][j] == 'S':
                     result = False
 
-        if result == False:
+        if not result:
             break
 
-    if result == True:
-        print(obstacles)
+    if result:
         break
 
-
-
-
-
 # 출력
-print('YES' if result == True else 'NO')
+print("YES" if result is True else "NO", end='')
