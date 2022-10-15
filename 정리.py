@@ -20,6 +20,12 @@ left_side = [x for x in tail if x <= pivot]
 리스트.append([x, y, a])
 리스트.remove([x, y, a])
 
+#리스트(문자열) 안에서 특정 값 조회
+리스트.count()
+
+#이진변환
+bin() 
+
 #문자열 뒤집기
 word = word[::-1]
 
@@ -72,6 +78,9 @@ heap = []
 heapq.heappush(heap, input)
 heapq.heappop(heap)
 
+재귀한도 풀기
+import sys
+sys.setrecursionlimit(10**7)
 
 내장 :
     1) eval()
