@@ -6,7 +6,7 @@ def solution(progresses, speeds):
     time = []
 
     ## 리스트의 개수가 서로 같으므로, zip을 활용하여 for p, s in zip(progresses, speeds): 로 나타냈으면 더 좋았을 것
-    ## progress[i] 와 speeds[i] 가 반복되므로 p, s와 같이 단순하게 나타내는 것이 좋았을 것
+    ## # progress[i] 와 speeds[i] 가 반복되므로 p, s와 같이 단순하게 나타내는 것이 좋았을 것
     for i in range(length):
         if (100 - progresses[i]) % speeds[i] == 0:
             time.append((100 - progresses[i])//speeds[i])
